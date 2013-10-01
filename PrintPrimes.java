@@ -1,18 +1,18 @@
 public class PrintPrimes {
-  int numberOfPrimes;
-  int RR;
-  int CC;
+  int numbOfPrimes;
+  int numOfRows;
+  int numOfColumns;
   int WW;
   int ORDMAX;
   int listOfPrimes[];
 
-  public PrintPrimes(int numberOfPrimes, int RR, int CC, int WW, int ORDMAX) {
-    this.numberOfPrimes   = numberOfPrimes;
-    this.RR  = RR;
-    this.CC  = CC;
+  public PrintPrimes(int numbOfPrimes, int numOfRows, int numOfColumns, int WW, int ORDMAX) {
+    this.numbOfPrimes   = numbOfPrimes;
+    this.numOfRows  = numOfRows;
+    this.numOfColumns  = numOfColumns;
     this.WW  = WW;
     this.ORDMAX = ORDMAX;
-    this.listOfPrimes = new int[numberOfPrimes + 1];
+    this.listOfPrimes = new int[numbOfPrimes + 1];
   }
 
 
@@ -41,7 +41,7 @@ public class PrintPrimes {
       int ORD = 2;
       int SQUARE = 9;
 
-      for(int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
+      for(int primesFoundSoFar = 1; primesFoundSoFar <= numbOfPrimes; primesFoundSoFar++) {
         do {
           J = J + 2;
           if (J == SQUARE) {
@@ -66,19 +66,19 @@ public class PrintPrimes {
     public void printPrimes() {
         int PAGENUMBER = 1;
         int PAGEOFFSET = 1;
-        while (PAGEOFFSET <= numberOfPrimes) {
-          System.out.println("The First " + numberOfPrimes +
+        while (PAGEOFFSET <= numbOfPrimes) {
+          System.out.println("The First " + numbOfPrimes +
                                " Prime Numbers --- Page " + PAGENUMBER);
           System.out.println("");
-          for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
-            for (int C = 0; C < CC;C++)
-              if (ROWOFFSET + C * RR <= numberOfPrimes)
-                System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
+          for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + numOfRows; ROWOFFSET++){
+            for (int C = 0; C < numOfColumns;C++)
+              if (ROWOFFSET + C * numOfRows <= numbOfPrimes)
+                System.out.format("%10d", listOfPrimes[ROWOFFSET + C * numOfRows]);
             System.out.println("");
           }
           System.out.println("\f");
           PAGENUMBER = PAGENUMBER + 1;
-          PAGEOFFSET = PAGEOFFSET + RR * CC;
+          PAGEOFFSET = PAGEOFFSET + numOfRows * numOfColumns;
         }
     }
 }
