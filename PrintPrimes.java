@@ -38,6 +38,7 @@ public class PrintPrimes {
       int ORD = 2;
       int SQUARE = 9;
 
+      //i represents the number of prime numbers found so far
       for(int i = 1; i <= numbOfPrimes; i++) {
         while (!isPrime) {
           primeCandidate = primeCandidate + 2;
@@ -69,8 +70,10 @@ public class PrintPrimes {
           System.out.println("The First " + numbOfPrimes +
                                " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
+          //i represents the row offset
           for (int i = pageOffset; i < pageOffset + numOfRows; i++) {
-            for (int j = 0; j < numOfColumns;C++) {
+            //j represents the column offset
+            for (int j = 0; j < numOfColumns;j++) {
               if (i + j * numOfRows <= numbOfPrimes) {
                 System.out.format("%10d", listOfPrimes[i + j * numOfRows]);
               }
