@@ -21,10 +21,9 @@ public class PrintPrimes {
   }
 
   public void calculatePrimes() {
-      /* Two is the only even prime. All other prime numbers are odd.
-       * To simplify the code, we simply add 2 as a prime number, and
-       * delegate the task of finding all odd prime numbers to a helper
-       * function.
+      /* 
+       * Add only even prime number 2 to our list, then use helper function
+       * calculateOddPrimes() to find the rest of the prime numbers.
        */
       listOfPrimes[1] = 2;
       calculateOddPrimes();
