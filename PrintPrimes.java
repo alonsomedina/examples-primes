@@ -1,4 +1,5 @@
 public class PrintPrimes {
+	
   int numbOfPrimes;
   int numOfRows;
   int numOfColumns;
@@ -33,7 +34,6 @@ public class PrintPrimes {
       boolean isPrime;
       int N;
       int listOfMultiples[] = new int[ORDMAX + 1];
-
       int primeCandidate = 1;
       int ORD = 2;
       int SQUARE = 9;
@@ -66,14 +66,15 @@ public class PrintPrimes {
     public void printPrimes() {
         int pageNumber = 1;
         int pageOffset = 1;
+        
         while (pageOffset <= numbOfPrimes) {
           System.out.println("The First " + numbOfPrimes +
-                               " Prime Numbers --- Page " + pageNumber);
+                             " Prime Numbers --- Page " + pageNumber);
           System.out.println("");
           //i represents the row offset
           for (int i = pageOffset; i < pageOffset + numOfRows; i++) {
             //j represents the column offset
-            for (int j = 0; j < numOfColumns;j++) {
+            for (int j = 0; j < numOfColumns; j++) {
               if (i + j * numOfRows <= numbOfPrimes) {
                 System.out.format("%10d", listOfPrimes[i + j * numOfRows]);
               }
