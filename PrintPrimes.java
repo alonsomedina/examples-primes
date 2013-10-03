@@ -40,7 +40,11 @@ public class PrintPrimes {
 
       //i represents the number of prime numbers found so far
       for(int i = 1; i <= numbOfPrimes; i++) {
-        while (!isPrime) {
+      	/*
+      	 *this do-while loop should stylistically be changed into a while loop, however the code 
+      	 *does not function properly in a while-loop and the changed was therefore reverted
+      	 */
+        do {
           primeCandidate = primeCandidate + 2;
           if (primeCandidate == SQUARE) {
             ORD = ORD + 1;
@@ -58,7 +62,7 @@ public class PrintPrimes {
             }
             N = N + 1;
           }
-        }
+        } while (!isPrime) 
         listOfPrimes[i] = primeCandidate;
       }
     }
