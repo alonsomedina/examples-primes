@@ -32,11 +32,11 @@ public class PrintPrimes {
 
   private void calculateOddPrimes() {
       boolean isPrime;
-      int N;
+      int counter;
       int listOfMultiples[] = new int[ORDMAX + 1];
       int primeCandidate = 1;
       int ORD = 2;
-      int SQUARE = 9;
+      int square = 9;
 
       //i represents the number of prime numbers found so far
       for(int i = 1; i <= numbOfPrimes; i++) {
@@ -46,21 +46,21 @@ public class PrintPrimes {
       	 */
         do {
           primeCandidate = primeCandidate + 2;
-          if (primeCandidate == SQUARE) {
+          if (primeCandidate == square) {
             ORD = ORD + 1;
-            SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
+            square = listOfPrimes[ORD] * listOfPrimes[ORD];
             listOfMultiples[ORD - 1] = primeCandidate;
           }
-          N = 2;
+          counter = 2;
           isPrime = true;
-          while (N < ORD && isPrime) {
-            while (listOfMultiples[N] < primeCandidate) {
-              listOfMultiples[N] = listOfMultiples[N] + listOfPrimes[N] + listOfPrimes[N];
+          while (counter < ORD && isPrime) {
+            while (listOfMultiples[counter] < primeCandidate) {
+              listOfMultiples[counter] = listOfMultiples[counter] + listOfPrimes[counter] + listOfPrimes[counter];
             }
-            if (listOfMultiples[N] == primeCandidate) {
+            if (listOfMultiples[counter] == primeCandidate) {
               isPrime = false;
             }
-            N = N + 1;
+            counter = counter + 1;
           }
         } while (!isPrime) 
         listOfPrimes[i] = primeCandidate;
