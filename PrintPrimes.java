@@ -54,7 +54,7 @@ public class PrintPrimes {
           }
           counter = 2;
           isPrime = true;
-          
+          //nested loop that checks whether our prime candidate is a multiple of another number and therefore not a prime
           while (counter < currentRefPoint && isPrime) {
             while (listOfMultiples[counter] < primeCandidate) {
               listOfMultiples[counter] = listOfMultiples[counter] + 2 * listOfPrimes[counter];
@@ -73,6 +73,7 @@ public class PrintPrimes {
         int pageNumber = 1;
         int pageOffset = 1;
         
+        //loop that formats the output and prints the prime numbers to the screen
         while (pageOffset <= numbOfPrimes) {
           System.out.println("The First " + numbOfPrimes +
                              " Prime Numbers --- Page " + pageNumber);
