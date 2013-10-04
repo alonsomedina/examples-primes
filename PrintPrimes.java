@@ -47,7 +47,7 @@ public class PrintPrimes {
         do {
           primeCandidate = primeCandidate + 2;
           if (primeCandidate == square) {
-            currentRefPoint = currentRefPoint + 1;
+            currentRefPoint++;
             square = listOfPrimes[currentRefPoint] * listOfPrimes[currentRefPoint];
             listOfMultiples[currentRefPoint - 1] = primeCandidate;
           }
@@ -55,12 +55,12 @@ public class PrintPrimes {
           isPrime = true;
           while (counter < currentRefPoint && isPrime) {
             while (listOfMultiples[counter] < primeCandidate) {
-              listOfMultiples[counter] = listOfMultiples[counter] + listOfPrimes[counter] + listOfPrimes[counter];
+              listOfMultiples[counter] = listOfMultiples[counter] + 2 * listOfPrimes[counter];
             }
             if (listOfMultiples[counter] == primeCandidate) {
               isPrime = false;
             }
-            counter = counter + 1;
+            counter++;
           }
         } while (!isPrime) 
         listOfPrimes[i] = primeCandidate;
