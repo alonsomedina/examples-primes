@@ -3,14 +3,14 @@ public class PrintPrimes {
   int numbOfPrimes;
   int numOfRows;
   int numOfColumns;
-  int ORDMAX;
+  int maxRefPoints;
   int listOfPrimes[];
 
-  public PrintPrimes(int numbOfPrimes, int numOfRows, int numOfColumns, int ORDMAX) {
+  public PrintPrimes(int numbOfPrimes, int numOfRows, int numOfColumns, int maxRefPoints) {
     this.numbOfPrimes   = numbOfPrimes;
     this.numOfRows  = numOfRows;
     this.numOfColumns  = numOfColumns;
-    this.ORDMAX = ORDMAX;
+    this.maxRefPoints = maxRefPoints;
     this.listOfPrimes = new int[numbOfPrimes + 1];
   }
 
@@ -33,9 +33,9 @@ public class PrintPrimes {
   private void calculateOddPrimes() {
       boolean isPrime;
       int counter;
-      int listOfMultiples[] = new int[ORDMAX + 1];
+      int listOfMultiples[] = new int[maxRefPoints + 1];
       int primeCandidate = 1;
-      int ORD = 2;
+      int currentRefPoint = 2;
       int square = 9;
 
       //i represents the number of prime numbers found so far
@@ -47,13 +47,13 @@ public class PrintPrimes {
         do {
           primeCandidate = primeCandidate + 2;
           if (primeCandidate == square) {
-            ORD = ORD + 1;
-            square = listOfPrimes[ORD] * listOfPrimes[ORD];
-            listOfMultiples[ORD - 1] = primeCandidate;
+            currentRefPoint = currentRefPoint + 1;
+            square = listOfPrimes[currentRefPoint] * listOfPrimes[currentRefPoint];
+            listOfMultiples[currentRefPoint - 1] = primeCandidate;
           }
           counter = 2;
           isPrime = true;
-          while (counter < ORD && isPrime) {
+          while (counter < currentRefPoint && isPrime) {
             while (listOfMultiples[counter] < primeCandidate) {
               listOfMultiples[counter] = listOfMultiples[counter] + listOfPrimes[counter] + listOfPrimes[counter];
             }
