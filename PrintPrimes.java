@@ -46,6 +46,7 @@ public class PrintPrimes {
       	 */
         do {
           primeCandidate = primeCandidate + 2;
+          //if our candidate prime number is a square then move on to next reference number and update the square
           if (primeCandidate == square) {
             currentRefPoint++;
             square = listOfPrimes[currentRefPoint] * listOfPrimes[currentRefPoint];
@@ -53,6 +54,7 @@ public class PrintPrimes {
           }
           counter = 2;
           isPrime = true;
+          
           while (counter < currentRefPoint && isPrime) {
             while (listOfMultiples[counter] < primeCandidate) {
               listOfMultiples[counter] = listOfMultiples[counter] + 2 * listOfPrimes[counter];
